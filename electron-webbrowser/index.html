@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 50px;
+      background: lightgrey;
+    }
+    webview {
+      position: absolute;
+      top: 50px;
+      width: 100%;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="nav">
+    <input id="url" type="text" placeholder="Enter URL" style="width: 80%;">
+    <button onclick="navigate()">Go</button>
+  </div>
+  <webview id="content" src="https://www.google.com/" nodeintegration></webview>
+
+  <script>
+    function navigate() {
+      const url = document.getElementById('url').value;
+      document.querySelector('webview').src = url;
+    }
+  </script>
+</body>
+</html>
